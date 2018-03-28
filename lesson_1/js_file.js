@@ -1,6 +1,9 @@
+var money = prompt('Ваш бюджет?', ''),
+	name = prompt('Введите название своего магазина?', '');
+
 var mainList = {
-	_budget: +prompt("Ваш бюджет состовляет?", ""),
-	_orgName: prompt("Введите название своего магазина", ""),
+	budget: money, // тут ты должен написать только название переменной, в которую поместил ответ пользователя
+	orgName: name, // тут ты должен написать только название переменной, в которую поместил ответ пользователя
 	shopGoods: [],
 	employers: {
 		name: 'Василий',
@@ -14,10 +17,9 @@ mainList.shopGoods[0] = prompt("Какой тип товара будем про
 mainList.shopGoods[1] = prompt("Какой тип товара будем продавать?", "");
 mainList.shopGoods[2] = prompt("Какой тип товара будем продавать?", "");
 
-var
-budgetOneday = mainList._budget;
-day = 30;
-console.log(budgetOneday);
-console.log(typeof(budgetOneday));
+var day = 30;
+var budgetOneday = mainList.budget/day;
 
-alert('Ваш бюджет на день состовляет: ' + budgetOneday/day);
+alert('Ваш бюджет на день состовляет: ' + budgetOneday);
+
+console.log(mainList); //это нужно для тоо, чтобы в консоли увидеть весь объект с введенными в него новыми значениями)
