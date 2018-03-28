@@ -4,7 +4,7 @@ var budgetQuestion = prompt("Ваш бюджет состовляет?")
 var mainList = {
 	_budget: '30000',
 	_orgName: 'ТоргСклад',
-	shopGoods: ["продукты", "капцелярия"],
+	shopGoods: ["двери", "наличники"],
 	employers: {
 		name: 'Василий',
 		position: 'Директор',
