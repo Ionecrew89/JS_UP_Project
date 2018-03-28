@@ -1,8 +1,5 @@
-
-
 var mainList = {
-	
-	_budget: prompt("Ваш бюджет состовляет?", ""),
+	_budget: +prompt("Ваш бюджет состовляет?", ""),
 	_orgName: prompt("Введите название своего магазина", ""),
 	shopGoods: [],
 	employers: {
@@ -20,5 +17,7 @@ mainList.shopGoods[2] = prompt("Какой тип товара будем про
 var
 budgetOneday = mainList._budget;
 day = 30;
+console.log(budgetOneday);
+console.log(typeof(budgetOneday));
 
 alert('Ваш бюджет на день состовляет: ' + budgetOneday/day);
