@@ -1,33 +1,24 @@
-var budgetQuestion = prompt("Ваш бюджет состовляет?")
-	orgName = prompt("Введите название своего магазина")
+
 
 var mainList = {
-	_budget: '30000',
-	_orgName: 'ТоргСклад',
-	shopGoods: ["двери", "наличники"],
+	
+	_budget: prompt("Ваш бюджет состовляет?", ""),
+	_orgName: prompt("Введите название своего магазина", ""),
+	shopGoods: [],
 	employers: {
 		name: 'Василий',
 		position: 'Директор',
 		year: '30'
-	}
-}
+	},
+	open: true
+};
 
-var shopGoods=[] 
-shopGoodsDialog = prompt("Какой тип товара будем продавать?");
-shopGoods.push(shopGoodsDialog);
-shopGoodsDialog = prompt("Какой тип товара будем продавать?");
-shopGoods.push(shopGoodsDialog);
-shopGoodsDialog = prompt("Какой тип товара будем продавать?");
-shopGoods.push(shopGoodsDialog);
+mainList.shopGoods[0] = prompt("Какой тип товара будем продавать?", "");
+mainList.shopGoods[1] = prompt("Какой тип товара будем продавать?", "");
+mainList.shopGoods[2] = prompt("Какой тип товара будем продавать?", "");
 
-console.log(shopGoods);
+var
+budgetOneday = mainList._budget;
+day = 30;
 
-console.log(typeof(budgetQuestion));	
-
-var budget = Number(budgetQuestion);
-
-console.log(typeof(budget));
-
-budgetOneDay = budget / 30;
-
-alert('Ваш бюджет на день состовляет: ' + budgetOneDay);
+alert('Ваш бюджет на день состовляет: ' + budgetOneday/day);
