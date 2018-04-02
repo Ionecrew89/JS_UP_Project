@@ -28,14 +28,12 @@ for (let i=0; i<3; i++) {
 
 let a = prompt("Какой тип товара будем продавать?", "");
 	
-	if ((typeof(a) === 'string') && (typeof(a) != null)) {
+	if ((typeof(a) === 'string') && (typeof(a) !== null)) {
 		console.log('чет работает');
 		mainList.shopGoods[i] = a;
-		console.log(mainList.shopGoods);
 	} else {
 
 		alert('Поле обязательно для заполнения');
-		i = i - 1;
 	}
 	console.log(mainList);
 }
@@ -48,7 +46,7 @@ let a = prompt("Какой тип товара будем продавать?", 
 
 // let a = prompt("Какой тип товара будем продавать?", "");
 
-// if ((typeof(a) === 'string') && (typeof(a) != null)) {
+// if ((typeof(a) === 'string') && (typeof(a) !== null)) {
 // 		mainList.shopGoods[num] = a;
 // 	}
 
@@ -65,7 +63,7 @@ let a = prompt("Какой тип товара будем продавать?", 
 // do {
 // 	let a = prompt("Какой тип товара будем продавать?", "");
 
-// 	if ((typeof(a) === 'string') && (typeof(a) != null)) {
+// 	if ((typeof(a) === 'string') && (typeof(a) !== null)) {
 // 			mainList.shopGoods[num] = a;
 // 		}
 // 	num++;
@@ -74,13 +72,3 @@ let a = prompt("Какой тип товара будем продавать?", 
 
 // while(num < 3);
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-if (time < 0) {
-	console.log('Такого быть не может');
-} else if (time > 8 && time < 20) {
-		console.log('Время работать');
-	} else if (time < 24) {
-			console.log('Уже слишком поздно');
-		} else {
-				console.log('В сутках только 24 часа');
-			}
