@@ -1,6 +1,6 @@
 var money = +prompt("Ваш бюджет состовляет?", ""),
-	name = prompt("Введите название своего магазина", "");
-
+	name = prompt("Введите название своего магазина", ""),
+	time = 21;
 var mainList = {
 	_budget: money,
 	_orgName: name,
