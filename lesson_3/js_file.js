@@ -8,12 +8,11 @@ function employers() {
 
 	for (let i=0; i<4; i++) {
 
-
 		let nameEmployer = prompt("Имя вашего сотрудника?", "");
+	    mainList.employers[i] = nameEmployer;
+	    console.log(mainList.employers);
 	}
-}
-
-
+};
 
 function budget(){
 	money = prompt("Ваш бюджет состовляет?", "");
@@ -29,20 +28,20 @@ function start() {
 	price = 100000;
 }
 
-budget();
-start();
-employers();
 
 let mainList = {
 	_budget: money,
 	_orgName: name,
 	shopGoods: [],
-	employers: {
-		name: nameEmployer,
-	},
+	employers: [],
 	open: false,
 	discount: true
 };
+
+employers();
+budget();
+start();
+
 
 console.log(mainList.discount);
 
@@ -64,7 +63,7 @@ function shopGoods() {
 		} else {
 
 			alert('Поле обязательно для заполнения');
-			i = i - 1;
+			i--;
 		}
 		console.log(mainList);
 	}

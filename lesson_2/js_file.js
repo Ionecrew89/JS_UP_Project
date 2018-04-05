@@ -30,11 +30,14 @@ for (let i=0; i<3; i++) {
 let a = prompt("Какой тип товара будем продавать?", "");
 	
 	if ((typeof(a) === 'string') && (typeof(a) !== null)) {
-		console.log('чет работает');
+		
 		mainList.shopGoods[i] = a;
+		console.log(mainList.shopGoods[i]);
 	} else {
 
 		alert('Поле обязательно для заполнения');
+		i--;
+		console.log(mainList.shopGoods[i]);
 	}
 	console.log(mainList);
 }
@@ -47,11 +50,14 @@ let a = prompt("Какой тип товара будем продавать?", 
 
 // let a = prompt("Какой тип товара будем продавать?", "");
 
-// if ((typeof(a) === 'string') && (typeof(a) !== null)) {
+// if ((typeof(a) === 'string') && (typeof(a) !== null) && a !== '') {
 // 		mainList.shopGoods[num] = a;
-// 	}
+// 		num++;
+// 	} else {
 
-// num++;
+// 		alert('Поле обязательно для заполнения');
+	
+// 	}
 // console.log(mainList.shopGoods);
 // }
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -65,9 +71,14 @@ let a = prompt("Какой тип товара будем продавать?", 
 // 	let a = prompt("Какой тип товара будем продавать?", "");
 
 // 	if ((typeof(a) === 'string') && (typeof(a) !== null)) {
-// 			mainList.shopGoods[num] = a;
-// 		}
-// 	num++;
+// 		mainList.shopGoods[num] = a;
+//      num++;
+
+// 	} else {
+
+// 		alert('Поле обязательно для заполнения');
+	
+// 	}
 // 	console.log(mainList.shopGoods);
 // }
 
