@@ -39,7 +39,7 @@ let mainList = {
 
 
 			let nameEmployer = prompt("Имя вашего сотрудника?", "");
-		    mainList.nameEmployer[i]=nameEmployer
+		    mainList.nameEmployer[i]=nameEmployer;
 		}
 	},
 
@@ -62,7 +62,7 @@ let mainList = {
 	},
 
 	discountSystem: function discountSystem() {
-		if (mainList.discount == true) {
+		if (mainList.discount === true) {
 			price = (price * 80) / 100;
 		}
 		console.log('===========================');
@@ -87,24 +87,15 @@ let mainList = {
 };
 
 for (let key in mainList) {
-	// console.log("Наш магазин включает в себя:" + key + mainList[key]);
-	console.log(Object.keys(mainList).length);
+	 console.log("Наш магазин включает в себя:" + key+ '-' + mainList[key]);
 }
 
-let shopItems = []
-
-function chooseShopItems() {
-		let items = prompt('Перечислите через запятую товары', '');
-
-		mainList.shopItems = items.split(',');
-		mainList.shopItems.push(prompt('Подождите, еще', ''));
-		mainList.shopItems.sort();
-
-	} 
-	chooseShopItems();
+	
+mainList.chooseShopItems();
 
 mainList.shopItems.forEach(function(item,i) {
-	console.log('У нас вы можете купить:'+ item + ' - ' + i);
+	i++;
+	alert('У нас вы можете купить:'+ i + ' - ' + item);
 });
 
 
