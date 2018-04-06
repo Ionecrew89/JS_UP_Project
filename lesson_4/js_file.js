@@ -77,15 +77,23 @@ let mainList = {
 	},
 
 	chooseShopItems: function chooseShopItems() {
-		let items = prompt('Перечислите через запятую товары', '');
-			
-		if ((typeof(items) === 'string') && (typeof(items) !== null) && items !== '') {
-			mainList.shopItems = items.split(',');
-			mainList.shopItems.push(prompt('Подождите, еще', ''));
-			mainList.shopItems.sort();
-		} else {
-			let items = prompt('Перечислите через запятую товары', '');				
-		}
+					
+		for(i=0; i<1; i++) {
+
+			let items = prompt('Перечислите через запятую товары', '');
+
+
+			if ((typeof(items) === 'string') && (typeof(items) !== null) && items !== '') {
+				mainList.shopItems = items.split(',');
+				mainList.shopItems.push(prompt('Подождите, еще', ''));
+				mainList.shopItems.sort();
+				console.log(mainList.shopItems)
+			}  else {
+				console.log('мими')
+			let items = prompt('Перечислите через запятую товары', '');	
+			i--;			
+		 	}
+		};
 	} 
 };
 
@@ -100,6 +108,8 @@ mainList.shopItems.forEach(function(item,i) {
 	i++;
 	alert('У нас вы можете купить:'+ i + ' - ' + item);
 });
+
+
 
 
 
