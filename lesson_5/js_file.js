@@ -77,15 +77,12 @@ let mainList = {
 	},
 
 	chooseShopItems: function chooseShopItems() {
+		let items = prompt('Перечислите через запятую товары', '');
 
-		if ((typeof(a) === 'string') && (typeof(a) !== null) && a !== '') {
-			
-			let items = prompt('Перечислите через запятую товары', '');
+		mainList.shopItems = items.split(',');
+		mainList.shopItems.push(prompt('Подождите, еще', ''));
+		mainList.shopItems.sort();
 
-			mainList.shopItems = items.split(',');
-			mainList.shopItems.push(prompt('Подождите, еще', ''));
-			mainList.shopItems.sort();
-		} 
 	} 
 };
 
