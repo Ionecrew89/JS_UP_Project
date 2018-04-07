@@ -1,5 +1,16 @@
-// let buttons = document.getElementsByClassName('.menu-item');
+let buttons = document.getElementsByClassName('menu-item'),
+	menu = document.getElementsByClassName('menu'),
+	body = document.getElementsByTagName('body'),
+	clonBtn = buttons[0].cloneNode(true),
+	div = document.createElement('div');
 
-// // document.boby.insertBefore(buttons[2], buttons[3]);
+console.log(menu)
+document.menu.appendChild(div);
 
-// alert('hf,jnftn')
+//document.boby.insertBefore(clonBtn);
+// document.boby.replaseChild(buttons[3], buttons[1]);
+// document.getElementsByClassName('menu').appendChild(clonBtn)
+
+//  body.style.backgroundImage = 'url(../img/apple_true.jpg';
+
+// document.boby.removeChild(buttons[2]);
