@@ -1,16 +1,20 @@
-let buttons = document.getElementsByClassName('menu-item'),
-	menu = document.getElementsByClassName('menu'),
-	body = document.getElementsByTagName('body'),
-	clonBtn = buttons[0].cloneNode(true),
-	div = document.createElement('div');
+let button = document.querySelectorAll('.menu-item'),
+	menu = document.querySelector('.menu'),
+	title = document.getElementById('title'),
+	adv = document.getElementsByClassName('adv'),
+	_prompt = document.getElementById('prompt'),
+	li = document.createElement('li');
 
-console.log(menu)
-document.menu.appendChild(div);
 
-//document.boby.insertBefore(clonBtn);
-// document.boby.replaseChild(buttons[3], buttons[1]);
-// document.getElementsByClassName('menu').appendChild(clonBtn)
+menu.insertBefore(button[2], button[1]);
+li.classList.add('menu-item');
+li.textContent = 'Пятый пункт';
+menu.appendChild(li);
+title.textContent = 'Мы продаем только подлинную технику Apple';
+adv[0].style.display = 'none';
 
-//  body.style.backgroundImage = 'url(../img/apple_true.jpg';
+let a = prompt('Ваше отношение к технике apple', '');
 
-// document.boby.removeChild(buttons[2]);
+_prompt.textContent = a;
+
+document.body.style.backgroundImage = 'url(img/apple_true.jpg)';
