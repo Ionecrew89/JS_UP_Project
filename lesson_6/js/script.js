@@ -36,9 +36,9 @@ btnOpen.addEventListener('click', ()=>{
 
 goodsItemBtn.addEventListener('click', ()=>{
 	
-	for (let i=0; i<goodsItem.length; i++) {
+	for (let i=0; i<productСategory.length; i++) {
 
-		let a = goodsItem[i].value;
+		let a = productСategory[i].value;
 			
 			if ((typeof(a) === 'string') && (typeof(a) !== null)) {
 				mainList.chooseGoods[i] = a;
