@@ -38,13 +38,14 @@ console.log(' html построен');
 	});
 
 	// timer
-	let deadline = '2018-03-20';
+	let deadline = '2018-05-20';
 
 	function getTimeRemaining(endtime) {
+
 		let t = Date.parse(endtime) - Date.parse(new Date()),
-		seconds = Math.floor( (t/1000) % 60 ),
-		minutes = Math.floor( (t/1000/60) % 60 ),
-		hours = Math.floor( (t/(1000*60*60)) );
+			seconds = Math.floor( (t/1000) % 60 ),
+			minutes = Math.floor( (t/1000/60) % 60 ),
+			hours = Math.floor( (t/(1000*60*60)) );
 
 		return {
 			'total': t,
@@ -52,30 +53,20 @@ console.log(' html построен');
 			'minutes': minutes,
 			'seconds': seconds
 		};
-		console.log('++++++++++++');
-		console.log(t);
-		console.log(Date.parse(endtime));
-		console.log(Date.parse(new Date()));
-		console.log('++++++++++++');
 	}
 
-	function setClock(id, endtime){
+	function setClock(id, endtime) {
 
 		let timer = document.getElementById(id),
-		hours = timer.querySelector('.hours'),
-		minutes = timer.querySelector('.minutes'),
-		seconds = timer.querySelector('.seconds');
-
-		console.log(timer);
-		console.log(hours);
-		console.log(minutes);
-		console.log(seconds);
+			hours = timer.querySelector('.hours'),
+			minutes = timer.querySelector('.minutes'),
+			seconds = timer.querySelector('.seconds');
 
 		function updateClock() {
 			let t = getTimeRemaining(endtime);
 			
 			hours.innerHTML = t.hours;
-			minutes.innerHTML = t.minutes;
+			minutes.innerHTML = t.minutes;4
 			seconds.innerHTML = t.seconds;
 
 			if (t.total <= 0) {
