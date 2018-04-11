@@ -80,3 +80,4 @@ console.log(' html построен');
 
 	setClock('timer', deadline);
 });
+
