@@ -64,7 +64,7 @@ window.addEventListener('DOMContentLoaded',function() {
 			let t = getTimeRemaining(endtime);
 			
 			hours.innerHTML = t.hours;
-			minutes.innerHTML = t.minutes;4
+			minutes.innerHTML = t.minutes;
 			seconds.innerHTML = t.seconds;
 
 			if (t.total <= 0) {
