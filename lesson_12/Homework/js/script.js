@@ -1,11 +1,11 @@
 $(document).ready(function() {
-
+	
 // $('.main_btn')
 // $('.main_btna')
 // $('[href="#tour"]')
 // $('[href="#sheldure"]')
 
-	$('.main_logo').on('click', function() {
+	$('.main_btna').on('click', function() {
 
 		let modal = $('.modal'),
 			overlay = $('.overlay')		

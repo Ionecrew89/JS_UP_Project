@@ -103,52 +103,60 @@ window.addEventListener('DOMContentLoaded',function() {
 	message.success = "Cпасибо! Скоро мы с вами свяжемся";
 	message.failure = "Что-то пошло не так";
 
-	let form = document.getElementsByClassName('main-form')[0],
-	input = form.getElementsByTagName('input')[0],
-	statusMessage = document.createElement('div');
+	let formMail = document.getElementsByClassName('main-form')[0],
+ 		formMailInput = formMail.getElementsByTagName('input'),
+ 		statusMessage = document.createElement('div');
+
+	console.log(formMail);
+	console.log(formMailInput);
+
+	
 	statusMessage.classList.add('status');
 
 	// переменные для формы контакты
 	let formContact = document.getElementById('form'),
 	inputContact = formContact.getElementsByTagName('input');
+	console.log(formMailInput.length);
 
-	console.log(inputContact.length);
-	// console.log(inputContactMail);
-	// console.log(inputContactPhone);
+	formMail.addEventListener('submit', function(event) {
+		event.preventDefault();
+		// контакты
+		formMail.appendChild(statusMessage);
 
-	// form.addEventListener('submit', function(event) {
-	// 	event.preventDefault();
-	// 	// узнать подробнее
-	// 	form.appendChild(statusMessage);
+		// ajax
+		let request = new XMLHttpRequest();
+		request.open("POST", "server.php")
 
-	// 	// ajax
-	// 	let request = new XMLHttpRequest();
-	// 	request.open("POST", "server.php")
-
-	// 	request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 		
-	// 	// узнать подробнее
-	// 	let formData = new FormData(form);
+		// контакты
+		let formContactData = new FormData(formMail);
+		
+		// request.send(formData);
+		request.send(formContactData);
 
-	// 	request.onreadystatechange = function() {
-	// 		if (request.readyState < 4) {
-	// 			statusMessage.innerHTML = message.loading;
-	// 		} else if (request.readyState === 4) {
-	// 			if (request.status === 200 && request.status < 300){
-	// 				statusMessage.innerHTML = message.success;
-	// 				// добавляем контент на страницу
-	// 			} else {
-	// 				statusMessage.innerHTML = message.failure;
-	// 			}
-	// 		}
-	// 	}
+		request.onreadystatechange = function() {
+			
+			if (request.readyState < 4) {
+				statusMessage.innerHTML = message.loading;
 
-	// 	for (let i =0; i < input.length; i++) {
-	// 		input[i].value = '';
-	// 		// очищаем поля ввода
-	// 	}
-	// });
-
+			} else if (request.readyState === 4) {
+				if (request.status === 200 && request.status < 300){
+					
+					statusMessage.innerHTML = message.success;
+					// добавляем контент на страницу
+				} else {
+					statusMessage.innerHTML = message.failure;
+				}
+			}
+		}
+			
+		for (let i =0; i < formMailInput.length; i++) {
+			formMailInput[i].value = 'Очищаем поле';
+			console.log(formMailInput[i]);
+			// очищаем поля ввода
+			}
+	});
 
 	formContact.addEventListener('submit', function(event) {
 		event.preventDefault();
@@ -168,10 +176,12 @@ window.addEventListener('DOMContentLoaded',function() {
 		request.send(formContactData);
 
 		request.onreadystatechange = function() {
+			
 			if (request.readyState < 4) {
 				statusMessage.innerHTML = message.loading;
 			} else if (request.readyState === 4) {
 				if (request.status === 200 && request.status < 300){
+					
 					statusMessage.innerHTML = message.success;
 					// добавляем контент на страницу
 				} else {
@@ -179,11 +189,11 @@ window.addEventListener('DOMContentLoaded',function() {
 				}
 			}
 		}
-
-		for (let i = 0; i < inputContact.length; i++) {
-			inputContact[i].value = '';
+			
+		for (let i =0; i < inputContact.length; i++) {
+			inputContact[i].value = 'Очищаем все поля контактов';
 			console.log(inputContact[i]);
 			// очищаем поля ввода
-		}
+			}
 	});
 });
