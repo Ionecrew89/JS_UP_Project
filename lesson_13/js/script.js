@@ -268,7 +268,7 @@ let slideIndex = 1,
 		personsSum = +this.value;
 		total = (daysSum + personsSum)*4000;
 		
-		if(restDays.value == '' || persons.value == '' || restDays.value < 1 || !Number.isInteger(restDays.value)) {
+		if(restDays.value == '' || persons.value == '' || restDays.value < 1) {
 			totalValue.innerHTML = 0;	
 
 		} else {
@@ -280,7 +280,7 @@ let slideIndex = 1,
 		daysSum = +this.value;
 		total = (daysSum + personsSum)*4000;
 		
-		if(restDays.value == '' || persons.value == '' || persons.value < 1 || !Number.isInteger(persons.value)) {
+		if(restDays.value == '' || persons.value == '' || persons.value < 1) {
 			totalValue.innerHTML = 0;	
 		} else {
 			totalValue.innerHTML = total;
