@@ -110,13 +110,14 @@ window.addEventListener('DOMContentLoaded',function() {
 
 	// переменные для формы контакты
 	let formContact = document.getElementById('form'),
-	inputContact = formContact.getElementsByTagName('input')[1];
+	inputContact = formContact.getElementsByTagName('input');
 
-	console.log(formContact);
-	console.log(inputContact);
+	console.log(inputContact.length);
+	// console.log(inputContactMail);
+	// console.log(inputContactPhone);
 
 	// form.addEventListener('submit', function(event) {
-	// 	event		.preventDefault();
+	// 	event.preventDefault();
 	// 	// узнать подробнее
 	// 	form.appendChild(statusMessage);
 
@@ -179,7 +180,7 @@ window.addEventListener('DOMContentLoaded',function() {
 			}
 		}
 
-		for (let i =0; i < inputContact.length; i++) {
+		for (let i = 0; i < inputContact.length; i++) {
 			inputContact[i].value = '';
 			console.log(inputContact[i]);
 			// очищаем поля ввода
