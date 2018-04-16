@@ -264,15 +264,19 @@ let slideIndex = 1,
 		total = 0;
 
 	totalValue.innerHTML = 0;
+	
 	persons.addEventListener('change', function(){
-		personsSum = +this.value;
-		total = (daysSum + personsSum)*4000;
-		
-		if(restDays.value == '' || persons.value == '' || restDays.value < 1) {
-			totalValue.innerHTML = 0;	
 
-		} else {
+		personsSum = +this.value;
+		
+		total = (daysSum + personsSum)*4000;
+
+		if(restDays.value == '' || persons.value == '' || restDays.value <= 0 || !Number.isInteger(restDays.value)) {
+			totalValue.innerHTML = 0;
+				
+		} else { 
 			totalValue.innerHTML = total;
+			
 		}
 	});
 
@@ -280,15 +284,18 @@ let slideIndex = 1,
 		daysSum = +this.value;
 		total = (daysSum + personsSum)*4000;
 		
-		if(restDays.value == '' || persons.value == '' || persons.value < 1) {
+		if(restDays.value == '' || persons.value == '' || persons.value <= 0 || !Number.isInteger(persons.value)) {
 			totalValue.innerHTML = 0;	
+
+
 		} else {
 			totalValue.innerHTML = total;
+			
 		}
 	});
 
 	place.addEventListener('change', function() {
-		if (restDays.value == '' || persons.value == '') {
+		if (restDays.value == '' || persons.value == '' || persons.value <= 0 || restDays.value <= 0 || !Number.isInteger(persons.value) || !Number.isInteger(restDays.value)) {
 			totalValue.innerHTML = 0;	
 		} else {
 			let a = total;
