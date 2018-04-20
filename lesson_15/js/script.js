@@ -177,12 +177,16 @@ let custom_info_form = document.getElementsByClassName('custom-info')[0],
 	// Обнуление результатов голосования
 	let progress_line = document.getElementsByClassName('progress-bar'),
 		result_count = document.getElementsByClassName('result-count');
-	function resultClean() {
+
+	function resultClean(height, procent) {
+		this.height = height || 0;
+		this.procent = procent || 0;
+
 		for(let i = 0; i < progress_line.length; i++){
-			progress_line[i].style.height = 0;
+			progress_line[i].style.height = height;
 		};
 		for(let i = 0; i < result_count.length; i++){
-			result_count[i].textContent = 0 + '%';
+			result_count[i].textContent = procent + '%';
 		};
 	};
 
@@ -217,7 +221,9 @@ let custom_info_form = document.getElementsByClassName('custom-info')[0],
 
 
 	// Кнопка Сбросить результаты
-	let btnReset = document.getElementById('reset');
+	let btnReset = document.getElementById('reset'),
+		btnVoting = document.getElementById('voting');
+	
 
 	btnReset.addEventListener('click', ()=>{
 		alert('eeeeeeeee')
@@ -227,7 +233,12 @@ let custom_info_form = document.getElementsByClassName('custom-info')[0],
 		custom.classList.add('active');
 
 		main_cards_it_clon.remove();
-	})
+	});
+
+	btnVoting.addEventListener('click', ()=>{
+		alert('yyyyyyyyy');
+	});
+
 });
 	
 
