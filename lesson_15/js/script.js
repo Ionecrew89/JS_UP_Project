@@ -213,6 +213,21 @@ let custom_info_form = document.getElementsByClassName('custom-info')[0],
 		// Очищаем результаты
 		resultClean()
 	});
+
+
+
+	// Кнопка Сбросить результаты
+	let btnReset = document.getElementById('reset');
+
+	btnReset.addEventListener('click', ()=>{
+		alert('eeeeeeeee')
+		hiddedElementsStart('','none');		
+		
+		main.style.display = 'none';
+		custom.classList.add('active');
+
+		main_cards_it_clon.remove();
+	})
 });
 	
 
