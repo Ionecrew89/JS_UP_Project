@@ -71,19 +71,17 @@ let custom_info_form = document.getElementsByClassName('custom-info')[0],
 	candidate_bio = candidate_block.getElementsByClassName('bio')[0];
 	
 
-
+	// Выбор пола
 	function radioChecked() { 
 
-
 		for(let i = 0; i < form_radio_input.length; i++) {		
-
 
 			form_radio_input[i].addEventListener('click', function() {
 
 				// переключение радио в между полами
 				if(this.hasAttribute('checked')) {
 
-				} else {
+					} else {
 
 					function checkedClear() {
 						form_radio_input[0].removeAttribute('checked');
@@ -100,16 +98,9 @@ let custom_info_form = document.getElementsByClassName('custom-info')[0],
 	}
 
 
-
-
-
-	
-
-	
-
-
-		let _slideIMG = '';
 	// Slider ++++++++++++++++++++++++++++++++++++++++++++
+	// Переменная для передачи слайда в форму
+	let _slideIMG = '';
 
 	function slider() {
 
@@ -117,10 +108,6 @@ let custom_info_form = document.getElementsByClassName('custom-info')[0],
 		slides = document.getElementsByClassName('preview')[0],
 		prev = document.querySelector('.prev'),
 		next = document.querySelector('.next');
-		// dotsWrap = document.querySelector('.slider-dots'),
-		// dots = document.getElementsByClassName('dot');
-
-		
 
 		showSlides(slideIndex); 
 
@@ -138,41 +125,35 @@ let custom_info_form = document.getElementsByClassName('custom-info')[0],
 					'url("img/construct-4.png")'
 				];
 
-				// Фон слайдера в зависемости от пола	
+		// Контейнер слайдера			
+		let person_easy = document.querySelector('.person-easy');
 					
-				let person_easy = document.querySelector('.person-easy');
-					
-					console.log( 'мужской пол ' + form_radio_value.value == "Мужской")
+		// Выбор галереи 
+		if(form_radio_value.value == "Мужской") {
 
-					if(form_radio_value.value == "Мужской") {
+			var slideIMG = slideIMG_men;
+			slides.style.backgroundImage = slideIMG_men[slideIndex-1];
+			person_easy.style.backgroundImage = 'url("img/candidate-1.png")';	
 
-						var slideIMG = slideIMG_men;
-						slides.style.backgroundImage = slideIMG_men[slideIndex-1];
-						person_easy.style.backgroundImage = 'url("img/candidate-1.png")';	
+			} else {
 
-						} else {
-
-							var slideIMG = slideIMG_gerl;
-							slides.style.backgroundImage = slideIMG_gerl[slideIndex-1];
-							person_easy.style.backgroundImage = 'url("img/candidate-2.png")';	
-					}	
-
-					console.log('используем этот массив: ' + slideIMG)
-				
-				if(n > slideIMG.length) {
-					slideIndex = 1;
-				};
-
-				if(n < 1) {
-					slideIndex = slideIMG.length;
-				};
-			
-				slides.style.backgroundImage = slideIMG[slideIndex - 1];
-
-				_slideIMG = slideIMG[slideIndex - 1];
-
-				console.log("переменная которая пойдет на вон:" + _slideIMG);
+				var slideIMG = slideIMG_gerl;
+				slides.style.backgroundImage = slideIMG_gerl[slideIndex-1];
+				person_easy.style.backgroundImage = 'url("img/candidate-2.png")';	
 			}	
+				
+		if(n > slideIMG.length) {
+			slideIndex = 1;
+		};
+
+		if(n < 1) {
+			slideIndex = slideIMG.length;
+		};
+			
+		slides.style.backgroundImage = slideIMG[slideIndex - 1];
+
+		_slideIMG = slideIMG[slideIndex - 1];
+		}	
 
 			
 		
@@ -194,28 +175,27 @@ let custom_info_form = document.getElementsByClassName('custom-info')[0],
 
 	
 	// Создаем карточку и переносим все данные
-		btn_ready.addEventListener('click', ()=>{
+	btn_ready.addEventListener('click', ()=>{
 
-			// отображаем необходимые  элементы
-			main.style.display = 'block';
-			custom.classList.remove('active');
-			hiddedElementsStart('block','none');
+		// отображаем необходимые  элементы
+		main.style.display = 'block';
+		custom.classList.remove('active');
+		hiddedElementsStart('block','none');
 
-			// создаём карточку
-			main_cards.insertBefore(main_cards_it_clon, main_cards_it[0]);
+		// создаём карточку
+		main_cards.insertBefore(main_cards_it_clon, main_cards_it[0]);
 
-			// перенос данных из формы в карточку
-			candidate_name.textContent = form_name_value.value;
-			candidate_age.textContent = form_age_value.value + ' лет';
-			candidate_sex.textContent = form_radio_value.value;
-			candidate_views.textContent = form_select_value.value;
-			candidate_bio.textContent = form_bio_value.value;
+		// перенос данных из формы в карточку
+		candidate_name.textContent = form_name_value.value;
+		candidate_age.textContent = form_age_value.value + ' лет';
+		candidate_sex.textContent = form_radio_value.value;
+		candidate_views.textContent = form_select_value.value;
+		candidate_bio.textContent = form_bio_value.value;
 
-			// перенос фото
-			console.log(_slideIMG + ' uuuuuuuuuuuuuu');
-			let photo_new = document.getElementsByClassName('photo-1')[1];
-			photo_new.style.backgroundImage = _slideIMG;
-			photo_new.style.backgroundSize = 'contain';
+		// перенос фото
+		let photo_new = document.getElementsByClassName('photo-1')[1];
+		photo_new.style.backgroundImage = _slideIMG;
+		photo_new.style.backgroundSize = 'contain';
 
 	});
 });
