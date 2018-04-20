@@ -178,12 +178,12 @@ let custom_info_form = document.getElementsByClassName('custom-info')[0],
 	let progress_line = document.getElementsByClassName('progress-bar'),
 		result_count = document.getElementsByClassName('result-count');
 
-	function resultClean(height, procent) {
-		this.height = height || 0;
-		this.procent = procent || 0;
+	function resultClean(height = 0, procent = 0) {
+		this.height = height;
+		this.procent = procent;
 
 		for(let i = 0; i < progress_line.length; i++){
-			progress_line[i].style.height = height;
+			progress_line[i].style.height = height + '%';
 		};
 		for(let i = 0; i < result_count.length; i++){
 			result_count[i].textContent = procent + '%';
@@ -226,7 +226,7 @@ let custom_info_form = document.getElementsByClassName('custom-info')[0],
 	
 
 	btnReset.addEventListener('click', ()=>{
-		alert('eeeeeeeee')
+
 		hiddedElementsStart('','none');		
 		
 		main.style.display = 'none';
@@ -236,7 +236,8 @@ let custom_info_form = document.getElementsByClassName('custom-info')[0],
 	});
 
 	btnVoting.addEventListener('click', ()=>{
-		alert('yyyyyyyyy');
+
+		resultClean(70,70);
 	});
 
 });
