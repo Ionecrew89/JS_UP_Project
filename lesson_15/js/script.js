@@ -174,6 +174,19 @@ let custom_info_form = document.getElementsByClassName('custom-info')[0],
 	};	
 
 	
+	// Обнуление результатов голосования
+	let progress_line = document.getElementsByClassName('progress-bar'),
+		result_count = document.getElementsByClassName('result-count');
+	function resultClean() {
+		for(let i = 0; i < progress_line.length; i++){
+			progress_line[i].style.height = 0;
+		};
+		for(let i = 0; i < result_count.length; i++){
+			result_count[i].textContent = 0 + '%';
+		};
+	};
+
+
 	// Создаем карточку и переносим все данные
 	btn_ready.addEventListener('click', ()=>{
 
@@ -197,6 +210,8 @@ let custom_info_form = document.getElementsByClassName('custom-info')[0],
 		photo_new.style.backgroundImage = _slideIMG;
 		photo_new.style.backgroundSize = 'contain';
 
+		// Очищаем результаты
+		resultClean()
 	});
 });
 	
