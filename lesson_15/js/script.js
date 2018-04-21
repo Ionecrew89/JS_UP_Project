@@ -135,14 +135,12 @@ let custom_info_form = document.getElementsByClassName('custom-info')[0],
 		if(form_radio_value.value == "Мужской") {
 
 			var slideIMG = slideIMG_men;
-			slides.style.backgroundImage = slideIMG_men[slideIndex-1];
-			person_easy.style.backgroundImage = 'url("img/candidate-1.png")';	
+			slides.style.backgroundImage = slideIMG_men[slideIndex-1];	
 
 			} else {
 
 				var slideIMG = slideIMG_gerl;
-				slides.style.backgroundImage = slideIMG_gerl[slideIndex-1];
-				person_easy.style.backgroundImage = 'url("img/candidate-2.png")';	
+				slides.style.backgroundImage = slideIMG_gerl[slideIndex-1]	
 			}	
 				
 		if(n > slideIMG.length) {
@@ -154,6 +152,7 @@ let custom_info_form = document.getElementsByClassName('custom-info')[0],
 		};
 			
 		slides.style.backgroundImage = slideIMG[slideIndex - 1];
+		person_easy.style.backgroundImage = slideIMG[slideIndex - 1];
 
 		_slideIMG = slideIMG[slideIndex - 1];
 		}	
