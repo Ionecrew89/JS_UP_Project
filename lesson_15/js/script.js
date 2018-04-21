@@ -6,9 +6,12 @@ window.addEventListener('DOMContentLoaded',function() {
 		main = document.getElementsByClassName('main')[0],
 		custom = document.getElementsByClassName('custom')[0],
 		body = document.getElementsByTagName('body')[0],
-		btn_ready = document.getElementById('ready'); 
+		btn_ready = document.getElementById('ready'),
+		main_cards_item = document.querySelectorAll('.main-cards-item')[0];
 
-		
+		// сбрасываем выделение кандлидата 
+		main_cards_item.classList.remove('main-cards-item-active');
+
 
 	function hiddedElementsStart(_btn, _modal) {
 		this._btn = _btn;
