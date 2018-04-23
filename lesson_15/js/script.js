@@ -242,6 +242,11 @@ let custom_info_form = document.getElementsByClassName('custom-info')[0],
 		main_cards_it_clon.remove();
 	});
 
+	// btnVoting.addEventListener('click', ()=>{
+
+	// 	resultClean(70,70);
+	// });
+
 	// Кнопка Честное голосование
 	btnVoting.addEventListener('click', function () {
 		// генерация случайных числе - выборы же "честные"))))
@@ -254,11 +259,41 @@ let custom_info_form = document.getElementsByClassName('custom-info')[0],
 		result_count[2].textContent = c + '%';
 
 		progress_line[0].style.height = a + '%';
-		progress_line[1].style.height = b  + '%';
-		progress_line[2].style.height = c  + '%';
+		progress_line[1].style.height = b + '%';
+		progress_line[2].style.height = c + '%';
 	});		
 
-				
+	// Вмешаться в выборы
+	btnCrime.addEventListener('click', function () {
+
+		let a = Math.floor(Math.random() * 100 + 0),
+			b = Math.floor(Math.random() * (100 - a) + 0),
+			c = 100 - (a + b);
+
+			 if(a >= 25 && c >= 25) {
+			 	a = a - 15;
+				b = b + 25;
+				c = c - 15;
+
+			 	} else if(a >= 25) {
+					a = a - 25;
+					b = b + 25;
+					
+					} else if(c >= 25) {
+						c = c - 25;
+						b = b + 25;
+					
+			};
+
+		result_count[0].textContent = a + '%';
+		result_count[1].textContent = b + '%';
+		result_count[2].textContent = c + '%';
+
+		progress_line[0].style.height = a + '%';
+		progress_line[1].style.height = b + '%';
+		progress_line[2].style.height = c + '%';
+	});
+
 });
 	
 
