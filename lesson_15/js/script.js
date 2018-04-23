@@ -257,7 +257,8 @@ let custom_info_form = document.getElementsByClassName('custom-info')[0],
 		progress_line[1].style.height = b  + '%';
 		progress_line[2].style.height = c  + '%';
 	});		
-			
+
+				
 });
 	
 
