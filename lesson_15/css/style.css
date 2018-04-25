@@ -380,6 +380,32 @@
   border: 2px solid rgba(31, 140, 226, 0.8);
 }
 
+.custom-info input[type="number"] {
+  width: 270px;
+  height: 60px;
+  border-radius: 30px;
+  background-color: #1c2028;
+  border: none;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: center;
+  padding: 0 15px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+.custom-info input[type="number"]:focus {
+  border: 2px solid rgba(31, 140, 226, 0.8);
+}
+
 .custom-info .radio {
   display: flex;
   align-items: center;

@@ -214,14 +214,12 @@ let custom_info_form = document.getElementsByClassName('custom-info')[0],
 			// ФИО
 		let i1 = custom_info_form.querySelectorAll('input[type="text"]')[0].value,
 			// Возраст
-			i2 = custom_info_form.querySelectorAll('input[type="text"]')[0].value,
+			i2 = Math.ceil(Math.abs(custom_info_form.querySelector('#age').value)),
 			// Библиография
 			i3 = custom_info_form.querySelector('textarea');
 			reg = /[a-zA-Z]/i;
-			number = /[^\d]/;
-			console.log(isNaN(i2));
 		// Проверки для полей
-		if ( number.test(i2) || reg.test(i1) || i1 == '' || i1.length < 4 || i2 < 35 || i2 > 80 || isNaN(i2) || i3.length < 10) {
+		if (reg.test(i1) || i1 == '' || i1.length < 4 || i2 < 35 || i2 > 80 || i3.length < 10) {
 
 			alert('Проверьте данные на корректность\n\r- Все поля обязательны для заполнения\n\r - ФИО - только русские буквы и не меньше 4 символов.\n\r - Возраст от 35 до 80\n\r Библиография не меньше 10 символов\n\r');
 
