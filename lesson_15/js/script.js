@@ -291,13 +291,14 @@ let custom_info_form = document.getElementsByClassName('custom-info')[0],
 		b = randomNumber(1, 100),
 		c = randomNumber(1, 100),
 		sum = a + b + c;
-		while(sum !== 100) {
+		while(sum !== 100 && a != 0 && b != 0 && c != 0) {
 			a = randomNumber(1, 100),
 			b = randomNumber(1, 100) + crime,
 			c = randomNumber(1, 100),
 			sum = a + b + c;
+			
 		} 
-	} ;
+	};
 
 	// Кнопка Честное голосование
 	btnVoting.addEventListener('click', function () {
