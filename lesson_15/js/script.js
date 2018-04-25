@@ -215,13 +215,13 @@ let custom_info_form = document.getElementsByClassName('custom-info')[0],
 		let i1 = custom_info_form.querySelectorAll('input[type="text"]')[0].value,
 			// Возраст
 			i2 = Math.ceil(Math.abs(custom_info_form.querySelector('#age').value)),
-			// Библиография
+			// Биография
 			i3 = custom_info_form.querySelector('textarea');
 			reg = /[a-zA-Z]/i;
 		// Проверки для полей
 		if (reg.test(i1) || i1 == '' || i1.length < 4 || i2 < 35 || i2 > 80 || i3.length < 10) {
 
-			alert('Проверьте данные на корректность\n\r- Все поля обязательны для заполнения\n\r - ФИО - только русские буквы и не меньше 4 символов.\n\r - Возраст от 35 до 80\n\r Библиография не меньше 10 символов\n\r');
+			alert('Проверьте данные на корректность\n\r- Все поля обязательны для заполнения\n\r - ФИО - только русские буквы и не меньше 4 символов.\n\r - Возраст от 35 до 80\n\r Биография не меньше 10 символов\n\r');
 
 		} else {
 			
